@@ -114,5 +114,39 @@ namespace Conexao
             //retorna a tabela preenchida
             return sTabela += "</table>";
         }
+        [System.Web.Services.WebMethod]
+        public static int InserirVenda() {
+            try
+            {
+                //Cria o objeto da classe de vendas
+                NegocioVendas negVendas = new NegocioVendas();
+                //Cria variavel que receberá o código da venda inserida
+                int iVenda = negVendas.InserirVenda();
+                //retorna o código da venda inserida
+                return iVenda;
+            }
+            catch (Exception)
+            {
+                //retorna 0 - para indicar de ocorreu um erro
+                return 0;
+            }
+        }
+
+        [System.Web.Services.WebMethod]
+        public static string InserirItensVenda(int iVenda, int iProduto) {
+            try
+            {
+                //Cria o objeto da classe de vendas
+                NegocioVendas negVendas = new NegocioVendas();
+                //Chama o método para inserir os itens da venda
+                negVendas.InserirItens(iVenda, iProduto);
+                //Retorna OK - para indicar que inseriu os itens com sucesso
+                return "OK";
+            }
+            catch (Exception erro)
+            {
+                return erro.Message;
+            }
+        }
     }
 }

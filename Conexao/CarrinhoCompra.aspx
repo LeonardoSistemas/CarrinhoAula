@@ -109,6 +109,27 @@
         function ContinuarComprando() {
             window.location.href = "ExibirProduto.aspx";
         }
+        function FinalizarCompra() {
+
+            var sTable = document.getElementById('divExibeProdutoComprados');
+            var iProdutoID = 0;
+
+            $.ajax({
+                type: 'POST',
+                url: 'CarrinhoCompra.aspx/InserirVenda',
+                data: "{}",
+                contentType: 'application/json; charset=utf-8',
+                datatype: 'json',
+                success: function (retorno) {
+                    if (retorno.d != 0) {
+                        var sTable = document.getElementById('tblItensCompra');
+                        var iProdutoID = 0;
+
+                    }
+                }
+
+            });
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

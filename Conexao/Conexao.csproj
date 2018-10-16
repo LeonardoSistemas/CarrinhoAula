@@ -172,6 +172,7 @@
     <Compile Include="NegocioCliente.cs" />
     <Compile Include="NegocioOrcamento.cs" />
     <Compile Include="NegocioProduto.cs" />
+    <Compile Include="NegocioVendas.cs" />
     <Compile Include="Principal.aspx.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
